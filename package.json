@@ -12,11 +12,5 @@
   },
   "scripts": {
     "build": "tsc"
-  },
-  "author": "",
-  "license": "ISC",
-  "description": "",
-  "devDependencies": {
-    "typescript": "^5.8.3"
   }
 }
