@@ -16,4 +16,5 @@ var __exportStar = (this && this.__exportStar) || function(m, exports) {
 Object.defineProperty(exports, "__esModule", { value: true });
 __exportStar(require("./User"), exports);
 __exportStar(require("./Role"), exports);
+__exportStar(require("./Map"), exports);
 __exportStar(require("./MapStyle"), exports);

@@ -1,11 +1,20 @@
-export const SHAPE_SIZE: Record<string, { w: number; h: number; r?: number }> = {
-  "small-circle": { w: 32, h: 32, r: 9999 },
-  "big-circle": { w: 56, h: 56, r: 9999 },
-  "small-box": { w: 40, h: 32 },
-  "big-box": { w: 72, h: 48 },
-  "round-obj": { w: 48, h: 48, r: 12 },
-  "box-obj": { w: 48, h: 48 },
-};
+export type MapShape =
+  | "small-circle"
+  | "big-circle"
+  | "small-box"
+  | "big-box"
+  | "round-obj"
+  | "box-obj";
+
+export const SHAPE_SIZE: Record<string, { w: number; h: number; r?: number }> =
+  {
+    "small-circle": { w: 32, h: 32, r: 9999 },
+    "big-circle": { w: 56, h: 56, r: 9999 },
+    "small-box": { w: 40, h: 32 },
+    "big-box": { w: 72, h: 48 },
+    "round-obj": { w: 48, h: 48, r: 12 },
+    "box-obj": { w: 48, h: 48 },
+  };
 
 export const STATE_COLOR: Record<string, string> = {
   open: "#e74c3c",
