@@ -1,12 +1,12 @@
 import { MapShape } from "./MapStyle";
 
 export interface MapArea {
-  id: string;
+  _id: string;
   name: string;
 }
 
 export interface MapItem {
-  id: string
+  _id: string
   area: string;
   shape: MapShape;
   label: string;
