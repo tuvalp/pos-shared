@@ -12,5 +12,8 @@
   },
   "scripts": {
     "build": "tsc"
+  },
+  "dependencies": {
+    "mongoose": "^8.16.4"
   }
 }
