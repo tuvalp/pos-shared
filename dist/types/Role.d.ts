@@ -10,3 +10,8 @@ export interface Role {
     name: string;
     permissions: Permission[];
 }
+export declare const RoleModel: import("mongoose").Model<Role, {}, {}, {}, import("mongoose").Document<unknown, {}, Role, {}> & Role & {
+    _id: import("mongoose").Types.ObjectId;
+} & {
+    __v: number;
+}, any>;

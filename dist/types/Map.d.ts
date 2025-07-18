@@ -16,3 +16,13 @@ export interface MapItem {
     height?: number;
     color?: string;
 }
+export declare const MapAreaModel: import("mongoose").Model<MapArea, {}, {}, {}, import("mongoose").Document<unknown, {}, MapArea, {}> & MapArea & Required<{
+    _id: string;
+}> & {
+    __v: number;
+}, any>;
+export declare const MapItemModel: import("mongoose").Model<MapItem, {}, {}, {}, import("mongoose").Document<unknown, {}, MapItem, {}> & MapItem & Required<{
+    _id: string;
+}> & {
+    __v: number;
+}, any>;
