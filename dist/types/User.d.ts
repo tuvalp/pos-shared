@@ -1,16 +1,17 @@
 import { Role } from "./Role";
-import { Document } from "mongoose";
+import { Document, Types } from "mongoose";
 export interface User {
+    _id?: any;
     username: string;
     password: string;
     role: Role;
     color: string;
 }
-interface UserDocument extends User, Document {
+export interface UserDocument extends User, Document {
+    _id: Types.ObjectId;
 }
 export declare const UserModel: import("mongoose").Model<UserDocument, {}, {}, {}, Document<unknown, {}, UserDocument, {}> & UserDocument & Required<{
-    _id: unknown;
+    _id: Types.ObjectId;
 }> & {
     __v: number;
 }, any>;
-export {};
