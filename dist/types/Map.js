@@ -20,6 +20,7 @@ const itemSchema = new mongoose_1.Schema({
     width: Number,
     height: Number,
     color: String,
+    status: String
 }, { timestamps: true });
 exports.MapAreaModel = (0, mongoose_1.model)("MapArea", areaSchema);
 exports.MapItemModel = (0, mongoose_1.model)("MapItem", itemSchema);

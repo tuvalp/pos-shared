@@ -18,6 +18,7 @@ export interface MapItem {
   width?: number;
   height?: number;
   color?: string;
+  status?: string
 }
 
 
@@ -45,6 +46,7 @@ const itemSchema = new Schema<MapItem>(
     width: Number,
     height: Number,
     color: String,
+    status: String
   },
   { timestamps: true }
 );
