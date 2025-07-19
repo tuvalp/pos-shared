@@ -2,18 +2,17 @@ import { Schema, model, Document, Types } from "mongoose";
 import { Role } from "./Role";
 
 export interface User {
-  _id?: Types.ObjectId;
+  _id?: string
   username: string;
   password: string;
   role: Role;
   color: string;
 }
 
-export interface UserDocument extends User, Document {
-  _id: Types.ObjectId;
-}
+export type UserDoc = User;
 
-const userSchema = new Schema<UserDocument>({
+
+const userSchema = new Schema<UserDoc>({
   username: { type: String, required: true, unique: true },
   password: { type: String, required: true },
   role: { type: Schema.Types.ObjectId, ref: "Role", required: true },
@@ -21,4 +20,4 @@ const userSchema = new Schema<UserDocument>({
 }, { timestamps: true });
 
 
-export const UserModel = model<UserDocument>("User", userSchema);
+export const UserModel = model<UserDoc>("User", userSchema);
