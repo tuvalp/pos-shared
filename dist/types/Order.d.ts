@@ -14,19 +14,19 @@ export type OrderItemDiscount = {
 };
 export interface OrderItem {
     _id: string;
-    productId: Types.ObjectId | string;
+    product: Types.ObjectId;
     name: string;
     qty: number;
     price: number;
     total?: number;
-    userId: Types.ObjectId | string;
+    user: Types.ObjectId;
     note?: OrderItemNote[];
     discounts?: OrderItemDiscount[];
     createdAt: Date;
 }
 export interface Order {
     _id: string;
-    userId: Types.ObjectId | string;
+    user: Types.ObjectId;
     tableLabel: string;
     guests: number;
     status: OrderStatus;

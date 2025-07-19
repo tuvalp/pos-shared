@@ -16,18 +16,18 @@ const DiscountSchema = new mongoose_1.Schema({
     approvedId: { type: String },
 });
 const OrderItemSchema = new mongoose_1.Schema({
-    productId: { type: mongoose_1.Schema.Types.ObjectId, required: true },
+    product: { type: mongoose_1.Schema.Types.ObjectId, required: true },
     name: { type: String, required: true },
     qty: { type: Number, required: true },
     price: { type: Number, required: true },
     total: { type: Number },
-    userId: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
+    user: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
     note: { type: [NoteSchema], default: [] },
     discounts: { type: [DiscountSchema], default: [] },
     createdAt: { type: Date, default: Date.now },
 });
 const OrderSchema = new mongoose_1.Schema({
-    userId: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
+    user: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
     tableLabel: { type: String, required: true },
     status: {
         type: String,

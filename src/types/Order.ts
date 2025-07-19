@@ -4,6 +4,8 @@ import { Schema, model, Types } from "mongoose";
 
 export type OrderStatus = "open" | "served" | "paid" | "closed";
 
+
+
 export type OrderItemNote = {
   note: string;
   idx?: number;
@@ -20,12 +22,12 @@ export type OrderItemDiscount = {
 
 export interface OrderItem {
   _id: string;
-  productId: Types.ObjectId | string;
+  product: Types.ObjectId;
   name: string;
   qty: number;
   price: number;
   total?: number;
-  userId: Types.ObjectId | string;
+  user: Types.ObjectId;
   note?: OrderItemNote[];
   discounts?: OrderItemDiscount[];
   createdAt: Date;
@@ -33,7 +35,7 @@ export interface OrderItem {
 
 export interface Order {
   _id: string;
-  userId: Types.ObjectId | string;
+  user: Types.ObjectId;
   tableLabel: string;
   guests: number;
   status: OrderStatus;
@@ -63,12 +65,12 @@ const DiscountSchema = new Schema<OrderItemDiscount>({
 });
 
 const OrderItemSchema = new Schema<OrderItem>({
-  productId: { type: Schema.Types.ObjectId, required: true },
+  product: { type: Schema.Types.ObjectId, required: true },
   name: { type: String, required: true },
   qty: { type: Number, required: true },
   price: { type: Number, required: true },
   total: { type: Number },
-  userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+  user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   note: { type: [NoteSchema], default: [] },
   discounts: { type: [DiscountSchema], default: [] },
   createdAt: { type: Date, default: Date.now },
@@ -76,7 +78,7 @@ const OrderItemSchema = new Schema<OrderItem>({
 
 const OrderSchema = new Schema<OrderDoc>(
   {
-    userId: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
     tableLabel: { type: String, required: true },
     status: {
       type: String,
