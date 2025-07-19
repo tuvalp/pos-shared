@@ -1,4 +1,5 @@
 import { Types } from "mongoose";
+import { User } from "./User";
 export type OrderStatus = "open" | "served" | "paid" | "closed";
 export type OrderItemNote = {
     note: string;
@@ -19,7 +20,7 @@ export interface OrderItem {
     qty: number;
     price: number;
     total?: number;
-    user: Types.ObjectId | string;
+    user: User;
     note?: OrderItemNote[];
     discounts?: OrderItemDiscount[];
     createdAt: Date;

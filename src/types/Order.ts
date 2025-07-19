@@ -1,4 +1,5 @@
 import { Schema, model, Types } from "mongoose";
+import { User } from "./User";
 
 /* ──────── Types ──────── */
 
@@ -27,7 +28,7 @@ export interface OrderItem {
   qty: number;
   price: number;
   total?: number;
-  user: Types.ObjectId | string;
+  user: User;
   note?: OrderItemNote[];
   discounts?: OrderItemDiscount[];
   createdAt: Date;
