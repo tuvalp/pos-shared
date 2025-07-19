@@ -10,14 +10,16 @@ exports.SHAPE_SIZE = {
     "box-obj": { w: 48, h: 48 },
 };
 exports.STATE_COLOR = {
-    open: "#e74c3c",
-    served: "#f1c40f",
-    paid: "#2ecc71",
+    open: "#f1c40f",
+    served: "#2ecc71",
+    billed: "#e74c3c",
+    paid: "#88c0d0",
     closed: "#95a5a6",
 };
 exports.STATE_SHADOW = {
-    open: "0 0 8px rgba(231, 76, 60, 0.5)",
-    served: "0 0 8px rgba(241, 196, 15, 0.5)",
-    paid: "0 0 8px rgba(46, 204, 113, 0.5)",
+    open: "0 0 8px rgba(241, 196, 15, 0.5)",
+    served: "0 0 8px rgba(46, 204, 113, 0.5)",
+    billed: "0 0 8px rgba(231, 76, 60, 0.5)",
+    paid: "0 0 8px rgba(136, 192, 208, 0.5)",
     closed: "0 0 8px rgba(149, 165, 166, 0.5)",
 };
