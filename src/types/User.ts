@@ -2,7 +2,7 @@ import { Schema, model, Document, Types } from "mongoose";
 import { Role } from "./Role";
 
 export interface User {
-  id?: Types.ObjectId;
+  _id?: Types.ObjectId;
   username: string;
   password: string;
   role: Role;
@@ -10,7 +10,7 @@ export interface User {
 }
 
 export interface UserDocument extends User, Document {
-  id: Types.ObjectId;
+  _id: Types.ObjectId;
 }
 
 const userSchema = new Schema<UserDocument>({
