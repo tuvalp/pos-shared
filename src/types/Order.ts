@@ -22,12 +22,12 @@ export type OrderItemDiscount = {
 
 export interface OrderItem {
   _id: string;
-  product: Types.ObjectId;
+  product: Types.ObjectId | string;
   name: string;
   qty: number;
   price: number;
   total?: number;
-  user: Types.ObjectId;
+  user: Types.ObjectId | string;
   note?: OrderItemNote[];
   discounts?: OrderItemDiscount[];
   createdAt: Date;
@@ -35,7 +35,7 @@ export interface OrderItem {
 
 export interface Order {
   _id: string;
-  user: Types.ObjectId;
+  user: Types.ObjectId | string;
   tableLabel: string;
   guests: number;
   status: OrderStatus;
@@ -78,7 +78,7 @@ const OrderItemSchema = new Schema<OrderItem>({
 
 const OrderSchema = new Schema<OrderDoc>(
   {
-    user: { type: Schema.Types.ObjectId, ref: "User", required: true },
+    user: { type: Schema.Types.ObjectId , ref: "User", required: true },
     tableLabel: { type: String, required: true },
     status: {
       type: String,
