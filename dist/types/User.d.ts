@@ -1,7 +1,7 @@
-import { Role } from "./Role";
 import { Document, Types } from "mongoose";
+import { Role } from "./Role";
 export interface User {
-    _id?: any;
+    _id?: Types.ObjectId;
     username: string;
     password: string;
     role: Role;

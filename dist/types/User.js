@@ -7,5 +7,5 @@ const userSchema = new mongoose_1.Schema({
     password: { type: String, required: true },
     role: { type: mongoose_1.Schema.Types.ObjectId, ref: "Role", required: true },
     color: { type: String },
-});
+}, { timestamps: true });
 exports.UserModel = (0, mongoose_1.model)("User", userSchema);
