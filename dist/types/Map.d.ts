@@ -16,6 +16,7 @@ export interface MapItem {
     height?: number;
     color?: string;
     status?: string;
+    order?: string;
 }
 export declare const MapAreaModel: import("mongoose").Model<MapArea, {}, {}, {}, import("mongoose").Document<unknown, {}, MapArea, {}> & MapArea & Required<{
     _id: string;

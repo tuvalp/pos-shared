@@ -19,6 +19,7 @@ export interface MapItem {
   height?: number;
   color?: string;
   status?: string
+  order?: string
 }
 
 
