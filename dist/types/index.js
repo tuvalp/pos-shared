@@ -19,3 +19,4 @@ __exportStar(require("./Role"), exports);
 __exportStar(require("./Map"), exports);
 __exportStar(require("./MapStyle"), exports);
 __exportStar(require("./Order"), exports);
+__exportStar(require("./Menu"), exports);
