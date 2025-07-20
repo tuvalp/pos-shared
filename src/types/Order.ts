@@ -36,7 +36,7 @@ export interface OrderItem {
 
 export interface Order {
   _id: string;
-  user: Types.ObjectId | string;
+  user: User;
   tableLabel: string;
   guests: number;
   status: OrderStatus;
