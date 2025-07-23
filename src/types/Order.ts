@@ -67,7 +67,7 @@ const DiscountSchema = new Schema<OrderItemDiscount>({
 });
 
 const OrderItemSchema = new Schema<OrderItem>({
-  product: { type: Product, required: true },
+  product: { type: Schema.Types.ObjectId, ref: "Product", required: true },
   qty: { type: Number, required: true },
   total: { type: Number },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
