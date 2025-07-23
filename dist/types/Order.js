@@ -2,6 +2,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OrderModel = void 0;
 const mongoose_1 = require("mongoose");
+const Menu_1 = require("./Menu");
 /* ──────── Schemas ──────── */
 const NoteSchema = new mongoose_1.Schema({
     note: { type: String, required: true },
@@ -16,10 +17,8 @@ const DiscountSchema = new mongoose_1.Schema({
     approvedId: { type: String },
 });
 const OrderItemSchema = new mongoose_1.Schema({
-    product: { type: mongoose_1.Schema.Types.ObjectId, required: true },
-    name: { type: String, required: true },
+    product: { type: Menu_1.Product, required: true },
     qty: { type: Number, required: true },
-    price: { type: Number, required: true },
     total: { type: Number },
     user: { type: mongoose_1.Schema.Types.ObjectId, ref: "User", required: true },
     note: { type: [NoteSchema], default: [] },

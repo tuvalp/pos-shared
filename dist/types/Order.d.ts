@@ -1,4 +1,4 @@
-import { Types } from "mongoose";
+import { Product } from "./Menu";
 import { User } from "./User";
 export type OrderStatus = "open" | "served" | "paid" | "closed";
 export type OrderItemNote = {
@@ -15,7 +15,7 @@ export type OrderItemDiscount = {
 };
 export interface OrderItem {
     _id: string;
-    product: Types.ObjectId | string;
+    product: Product;
     name: string;
     qty: number;
     price: number;

@@ -1,4 +1,5 @@
 import { Schema, model, Types } from "mongoose";
+import { Product } from "./Menu";
 import { User } from "./User";
 
 /* ──────── Types ──────── */
@@ -23,7 +24,7 @@ export type OrderItemDiscount = {
 
 export interface OrderItem {
   _id: string;
-  product: Types.ObjectId | string;
+  product: Product;
   name: string;
   qty: number;
   price: number;
@@ -66,10 +67,8 @@ const DiscountSchema = new Schema<OrderItemDiscount>({
 });
 
 const OrderItemSchema = new Schema<OrderItem>({
-  product: { type: Schema.Types.ObjectId, required: true },
-  name: { type: String, required: true },
+  product: { type: Product, required: true },
   qty: { type: Number, required: true },
-  price: { type: Number, required: true },
   total: { type: Number },
   user: { type: Schema.Types.ObjectId, ref: "User", required: true },
   note: { type: [NoteSchema], default: [] },
